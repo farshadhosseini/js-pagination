@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginated List</title>
+    <script>var exports = {};</script>
+    <script src="./src/js/main.js" defer></script>
+    <link rel="stylesheet" href="./src/dist/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="flex flex-col m-4">
+        <header class="p-4 bg-indigo-800 rounded-md mb-2 text-left text-white font-bold">
+            Paginated List
+        </header>
+        <div class="grid grid-cols-12 gap-2">
+            <aside class="bg-gray-200 lg:col-span-3 md:col-span-4 sm:col-span-4 col-span-12 p-4 rounded-md">
+                <ul>
+                    <li class="bg-amber-200 p-2 mb-2 rounded-md cursor-pointer hover:bg-amber-200"><span class="fa fa-list text-indigo-900 fa-sm"></span> لیست پروازها</li>
+                    <li class="bg-white p-2 mb-2 rounded-md cursor-pointer hover:bg-amber-200"><span class="fa fa-coins text-indigo-900 fa-sm"></span> گزارشات مالی</li>
+                    <li class="bg-white p-2 mb-2 rounded-md cursor-pointer hover:bg-amber-200"><span class="fa fa-users text-indigo-900 fa-sm"></span> کاربران</li>
+                </ul>
+            </aside>
+            <main class="bg-gray-200 lg:col-span-9 md:col-span-8 sm:col-span-8 col-span-12 p-4 rounded-md">
+                    <div class="details flex mb-2 md:flex-row flex-col  justify-between">
+                        <select name="per-page" id="per-page" class="bg-white rounded-md md:w-[120px] w-full mb-1 p-2">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>                    
+                        <input type="text" name="search" id="search-input" class="rounded-md bg-white mb-1 grow md:mx-4 p-2" placeholder="جستجو بر اساس همه چی :)">    
+                        <div class="bg-white p-2 rounded-md total-sell mb-1" id="totalPrice">
+                           ... Loading
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto whitespace-nowrap mb-4 border border-solid border-gray-400 w-full rounded-md">
+                        <table class="bg-white border-collapse border border-slate-400 w-full text-center">
+                            <thead>
+                              <tr class="bg-indigo-700 text-white">
+                                <th class="border border-black px-3 py-1">ردیف</th>
+                                <th class="border border-black px-3 py-1">نام و نام خانوادگی </th>
+                                <th class="border border-black px-3 py-1"> شماره پرواز</th>
+                                <th class="border border-black px-3 py-1">مبلغ</th>                                                                                  
+                                <th class="border border-black px-3 py-1"> توضیحات </th>
+                              </tr>
+                            </thead>
+                            <tbody></tbody>
+                          </table>
+                    </div>
+                <footer class="p-2 mb-2 rounded-md text-center">
+                    <div class="flex justify-center gap-2 text-white text-sm flex-wrap" id="page-container">
+                        <span onclick="changePage()" class="cursor-pointer bg-indigo-500 hover:bg-indigo-800 w-[30px] h-[30px] p-1 rounded-full flex items-center justify-center">...</span>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>    
+</body>
+</html>

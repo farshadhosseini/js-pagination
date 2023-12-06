@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir-Thin.ttf');
+}
+
+* {
+    font-family: "Vazir", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.active-page {
+    background-color: rgb(55,53,163);
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 1px;
+}
+table tr:nth-child(2n) {
+    background-color: #eee;
+}
